@@ -21,17 +21,17 @@ class Sieve
     (2..@limit).select {|cadidate_prime| all_in_range[cadidate_prime]}
   end
 
-  def primes
-    # last index in array is the limit
-    # all marked as prime at the beginning
-    all_in_range = Array.new(@limit+1, true)
+#   def primes
+#     # last index in array is the limit
+#     # all marked as prime at the beginning
+#     all_in_range = Array.new(@limit+1, true)
 
-    (2...@limit).each do |index|
-      multiples = ((2 * index)..@limit).step(index)
-      multiples.each { |index_multiple| all_in_range[index_multiple] = false }
-    end
-    all_in_range.each_index.select { |index| all_in_range[index] && index >= 2}
-  end
+#     (2...@limit).each do |index|
+#       multiples = ((index * index)..@limit).step(index)
+#       multiples.each { |index_multiple| all_in_range[index_multiple] = false }
+#     end
+#     all_in_range.each_index.select { |index| all_in_range[index] && index >= 2}
+#   end
 end
 
 # class Sieve
